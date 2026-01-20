@@ -6,15 +6,17 @@ import { FaNodeJs } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 
+
 const Projects = () => {
     return (
+        <>
         <div className='mt-15'>
           <div className='px-3 md:px-0 lg:px-0'>
               <h2 className='text-white/90 text-sm'>Projects</h2>
             <p className='text-gray-400/50 text-sm mt-2'>These are a few projects I created as part of my learning and skill development...</p>
           </div>
 
-            <div className='md:flex md:justify-evenly gap-8 px-10 md:px-0 lg:px-0'>
+            <div className='md:flex md:gap-10 gap-8 px-10 md:px-0 lg:px-0'>
                 {/* Project-1 */}
                 <div className='w-70 h-105 overflow-hidden rounded-lg bg-neutral-900/50 mt-10 border border-dashed border-white/30'>
                     <img className='w-full h-55 hover:scale-90 hover:rounded-lg' src="/linear.png" alt="" />
@@ -104,6 +106,7 @@ const Projects = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

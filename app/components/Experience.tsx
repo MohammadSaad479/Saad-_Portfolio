@@ -27,7 +27,7 @@ hover:shadow-[0_0_30px_rgba(255,255,255,0.099)] transition-shadow duration-300 '
     </div>
 
     <div>
-      <p className='text-gray-400/50 text-sm mt-3 md:mt-0 lg:mt-0'>Aug 2025 - Present</p>
+      <p className='text-gray-400/50 text-sm mt-3 md:mt-0 lg:mt-0'>Sept 2025 - Present</p>
     </div>
   </div>
 
@@ -58,7 +58,7 @@ hover:shadow-[0_0_30px_rgba(255,255,255,0.099)] transition-shadow duration-300 m
     </div>
 
     <div>
-      <p className='text-gray-400/50 text-sm mt-3 md:mt-0 lg:mt-0'> Nov 2024 - March 2025</p>
+      <p className='text-gray-400/50 text-sm mt-3 md:mt-0 lg:mt-0'> Mar 2025 - June 2025</p>
     </div>
   </div>
 

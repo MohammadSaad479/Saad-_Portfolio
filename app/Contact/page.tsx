@@ -1,9 +1,11 @@
 "use client";
 
-import { ArrowUpRight, Mail, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Mail, ArrowRight, CircleCheck } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import React, { useState, FormEvent, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Page = () => {
   const [success, setSuccess] = useState(false);
@@ -35,22 +37,28 @@ const Page = () => {
 
   return (
     <div className="w-full min-h-screen bg-neutral-950">
-      <div className="w-full max-w-3xl mx-auto min-h-screen bg-neutral-950 px-4 sm:px-6 lg:px-0">
+      <div className="w-full max-w-3xl mx-auto min-h-screen bg-neutral-950 px-4 sm:px-6 lg:px-0 ">
+        <Navbar/>
 
         {success && (
           <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-            <div className="bg-green-100 border border-green-300 text-green-800 text-sm px-6 py-3 rounded-md shadow-md">
-              Message sent successfully. We will get back to you shortly!
-            </div>
+            <div className="flex items-center gap-2 
+            bg-green-100 border border-green-300 
+            text-green-800 text-xs sm:text-sm md:text-base 
+            px-3 sm:px-5 py-2 sm:py-3 
+            rounded-lg shadow-md">
+            <CircleCheck className="text-green-800 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+            <span>Message sent successfully</span>
+          </div>
           </div>
         )}
 
-        <div id="contact" className=" pt-10">
+        <div id="contact" className=" pt-10 pb-10 ">
           <h2 className="text-white/90 text-md ml-2.5">Contact Us</h2>
 
           <div className="flex flex-col lg:flex-row justify-between gap-6 mt-5 px-1 sm:px-0">
 
-            <div className="w-full lg:w-90 min-h-[27rem] bg-neutral-800/10 border border-white/10 rounded-lg p-4 sm:p-0">
+            <div className="w-full lg:w-90 min-h-108 bg-neutral-800/10 border border-white/10 rounded-lg p-4 sm:p-0">
               <div className="mt-6 sm:mt-10 sm:ml-7">
                 <h2 className="text-white text-lg tracking-tight">Get in Touch</h2>
                 <p className="text-sm mt-2 text-gray-400/50">
@@ -107,6 +115,7 @@ const Page = () => {
 
           </div>
         </div>
+        <Footer/>
       </div>
     </div>
   );
