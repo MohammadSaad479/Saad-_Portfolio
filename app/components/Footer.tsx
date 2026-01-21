@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="flex gap-3">
           <Tooltip text="Twitter">
             <a
-              href="https://x.com/YOUR_USERNAME"
+              href="https://x.com/MohammadSa3918"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center"

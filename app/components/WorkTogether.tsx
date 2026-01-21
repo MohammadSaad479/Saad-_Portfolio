@@ -95,7 +95,7 @@ const WorkTogether = () => {
 
                 <div className="bg-neutral-700/20 w-75 h-15 rounded-sm border border-white/20 hover:opacity-80 mt-3">
                   <div className="flex justify-between px-3">
-                    <a className="flex gap-3" href="https://x.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer">
+                    <a className="flex gap-3" href="https://x.com/MohammadSa3918" target="_blank" rel="noopener noreferrer">
                       <FaXTwitter className="text-white/50 mt-4.5 size-5" />
                       <div>
                         <h2 className="text-white/90 text-[13px] mt-3 tracking-tighter">Connect on X</h2>

@@ -27,7 +27,7 @@ const Intro = () => {
 
                 <Tooltip text="Twitter">
                     <a
-                        href="https://x.com/YOUR_USERNAME"
+                        href="https://x.com/MohammadSa3918"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex justify-center items-center py-1 px-1 bg-neutral-800/70 rounded-sm border border-dashed border-white/20"

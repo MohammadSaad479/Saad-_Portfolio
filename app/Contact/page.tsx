@@ -82,7 +82,7 @@ const Page = () => {
 
                 <div className="bg-neutral-700/20 w-full lg:w-75 h-15 rounded-sm border border-white/20 hover:opacity-80 mt-3">
                   <div className="flex justify-between px-3">
-                    <a className="flex gap-3" href="https://x.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer">
+                    <a className="flex gap-3" href="https://x.com/MohammadSa3918" target="_blank" rel="noopener noreferrer">
                       <FaXTwitter className="text-white/50 mt-4.5 size-5" />
                       <div>
                         <h2 className="text-white/90 text-[13px] mt-3 tracking-tighter">Connect on X</h2>
@@ -92,10 +92,15 @@ const Page = () => {
                     <ArrowUpRight className="text-white/50 size-5 mt-4.5 stroke-1" />
                   </div>
                 </div>
+                <div className="mt-10 text-[10px]">
+                  <h2 className="text-gray-400/50 hover:text-white/70 transition-all duration-300">
+                    Responses within 24 hours | Available for hire
+                  </h2>
+                </div>
               </div>
             </div>
 
-            <div className="w-full lg:w-90 min-h-[27rem] bg-neutral-800/10 border border-white/10 rounded-lg p-4 sm:p-0">
+            <div className="w-full lg:w-90 min-h-108 bg-neutral-800/10 border border-white/10 rounded-lg p-4 sm:p-0">
               <div className="mt-6 sm:mt-10 sm:ml-7">
                 <h2 className="text-white text-lg tracking-tight">Send a Message</h2>
                 <p className="text-sm mt-2 text-gray-400/50">
