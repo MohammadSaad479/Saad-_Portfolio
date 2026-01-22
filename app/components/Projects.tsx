@@ -20,7 +20,7 @@ const Projects = () => {
                 <div className='md:flex  md:gap-10 gap-8 px-10 md:px-0 lg:px-0'>
                     {/* Project-1 */}
                     <div className='w-70 h-105 overflow-hidden rounded-lg bg-neutral-900/50 mt-10 border border-dashed border-white/30'>
-                        <img className='w-full h-55 hover:scale-90 hover:rounded-lg' src="/img2.png" alt="" />
+                        <img className='w-full h-55 hover:scale-90 hover:rounded-lg' src="/aikit1.png" alt="" />
                         <a
                             href="https://ai-saas-next-js-template.vercel.app/"
                             target="_blank"
@@ -71,12 +71,17 @@ const Projects = () => {
 
                     {/* Project-2 */}
                     <div className='w-70 h-105 overflow-hidden rounded-lg bg-neutral-900/50 mt-10 border border-dashed border-white/30'>
-                        <img className='w-full h-55 hover:scale-90 hover:rounded-lg' src="/linear.png" alt="" />
-                        <div className='flex justify-between px-4 mt-4'>
-                            <p className='text-white/90 text-sm'>Saas product template</p>
-                            <LinkIcon className='text-gray-400/50 size-6 hover:text-white/90' />
-                        </div>
-                        <p className='text-gray-400/50 text-sm tracking-tighter mt-3 ml-4'>Modern saas template made using futuristic technologies like React, Tailwind CSS, Nextjs, Javascript</p>
+                        <img className='w-full h-55 hover:scale-90 hover:rounded-lg' src="/homely1.png" alt="" />
+                         <a
+                            href="https://ai-saas-next-js-template.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex justify-between px-4 mt-4"
+                        >
+                            <p className="text-white/90 text-sm">Homely- Futuristic Haven</p>
+                            <LinkIcon className="text-gray-400/50 size-6 hover:text-white/90" />
+                        </a>
+                        <p className='text-gray-400/50 text-xs tracking-tighter mt-3 ml-4'>Homely is a clean and modern real estate website template built with Next.js and Tailwind CSS, ideal for showcasing property listings with a fast and responsive design.</p>
                         <div className='px-4'>
 
                             <Tooltip text="JavaScript">
@@ -114,16 +119,24 @@ const Projects = () => {
                     </div>
                 </div>
 
-                {/* Project 3-4 */}
-                <div className='md:flex justify-center md:gap-10 gap-8 px-10 md:px-0 lg:px-0'>
-                    {/* Project-1
+                {/* Project 3 */}
+                <div className='md:flex  md:gap-10 gap-8 px-10 md:px-0 lg:px-0'>
+                
                 <div className='w-70 h-105 overflow-hidden rounded-lg bg-neutral-900/50 mt-10 border border-dashed border-white/30'>
-                    <img className='w-full h-55 hover:scale-90 hover:rounded-lg' src="/linear.png" alt="" />
-                    <div className='flex justify-between px-4 mt-4'>
-                        <p className='text-white/90 text-sm'>Saas product template</p>
-                        <LinkIcon className='text-gray-400/50 size-6 hover:text-white/90' />
-                    </div>
-                    <p className='text-gray-400/50 text-sm tracking-tighter mt-3 ml-4'>Modern saas template made using futuristic technologies like React, Tailwind CSS, Nextjs, Javascript</p>
+                    <img className='w-full h-55 hover:scale-90 hover:rounded-lg' src="/studio3.png" alt="" />
+
+                    <a
+                            href="https://studiova.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex justify-between px-4 mt-4"
+                        >
+                            <p className="text-white/90 text-sm">Studiova</p>
+                            <LinkIcon className="text-gray-400/50 size-6 hover:text-white/90" />
+                        </a>
+
+                    <p className='text-gray-400/50 text-xs tracking-tighter mt-3 ml-4'>Studiova is a modern and minimal website template designed for creative agencies, studios, and freelancers to showcase their services, projects, and brand 
+</p>
                     <div className='px-4'>
 
                         <Tooltip text="JavaScript">
@@ -158,16 +171,23 @@ const Projects = () => {
                     </div>
 
 
-                </div> */}
+                </div>
 
-                    {/* Project-2
+                    {/* Project-4 */}
                 <div className='w-70 h-105 overflow-hidden rounded-lg bg-neutral-900/50 mt-10 border border-dashed border-white/30'>
-                    <img className='w-full h-55 hover:scale-90 hover:rounded-lg' src="/linear.png" alt="" />
-                    <div className='flex justify-between px-4 mt-4'>
-                        <p className='text-white/90 text-sm'>Saas product template</p>
-                        <LinkIcon className='text-gray-400/50 size-6 hover:text-white/90' />
-                    </div>
-                    <p className='text-gray-400/50 text-sm tracking-tighter mt-3 ml-4'>Modern saas template made using futuristic technologies like React, Tailwind CSS, Nextjs, Javascript</p>
+                    <img className='w-full h-55 hover:scale-90 hover:rounded-lg' src="/prot4.png" alt="" />
+                      <a
+                            href="https://adenta.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex justify-between px-4 mt-4"
+                        >
+                            <p className="text-white/90 text-sm">Adenta- Dental Clinic</p>
+                            <LinkIcon className="text-gray-400/50 size-6 hover:text-white/90" />
+                        </a>
+                    <p className='text-gray-400/50 text-xs tracking-tighter mt-3 ml-4'>Adenta is a clean and modern dental clinic website template for showcasing services, doctors, and online appointments.
+
+</p>
                     <div className='px-4'>
 
                         <Tooltip text="JavaScript">
@@ -202,7 +222,7 @@ const Projects = () => {
                     </div>
 
 
-                </div> */}
+                </div>
                 </div>
 
             </div>
