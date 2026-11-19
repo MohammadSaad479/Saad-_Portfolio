@@ -1,55 +1,32 @@
-import { Tooltip } from "@/components/tooltip"
-import { CopyrightIcon } from 'lucide-react'
-import TwitterXIcon from '@/components/ui/twitter-x-icon'
-import GithubIcon from '@/components/ui/github-icon'
-import GmailIcon from '@/components/ui/gmail-icon'
+import { Tooltip } from "@/components/tooltip";
+import TwitterXIcon from "@/components/ui/twitter-x-icon";
+import GithubIcon from "@/components/ui/github-icon";
+import GmailIcon from "@/components/ui/gmail-icon";
+import { EMAIL, GITHUB_URL, X_URL } from "@/lib/data";
 
-
-const Footer = () => {
-  return (
-    <div className="w-full h-15 rounded-t  bg-neutral-800/20 border-white/10 border-t flex items-end">
-      <div className="w-full flex justify-between px-5 pb-3">
-        <span className="text-white/40 text-xs flex items-center gap-2">
-          <CopyrightIcon className="text-white/40 size-3 stroke-1" />
-          2026 Mohammad Saad
-        </span>
-
-        <div className="flex gap-3">
-          <Tooltip text="Twitter">
-            <a
-              href="https://x.com/MohammadSa3918"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center"
-            >
-              <TwitterXIcon className="text-white/70 size-4 stroke-1" />
-            </a>
-          </Tooltip>
-
-          <Tooltip text="Github">
-            <a
-              href="https://github.com/MohammadSaad479"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center"
-            >
-              <GithubIcon className="text-white/70 size-4 stroke-1" />
-            </a>
-          </Tooltip>
-
-          <Tooltip text="Gmail">
-  <a
-    href="mailto:saadqureshi479@gmail.com?subject=Contact from Portfolio&body=Hello Mohammad Saad,"
-    className="flex items-center justify-center"
-  >
-    <GmailIcon className="text-white/70 size-4 stroke-1" />
-  </a>
-</Tooltip>
-
-        </div>
-      </div>
+const Footer = () => (
+  <footer className="flex flex-col items-start justify-between gap-4 border-t-2 border-dashed border-line py-8 sm:flex-row sm:items-center">
+    <p className="text-sm text-stone">
+      © {new Date().getFullYear()} Mohammad Saad · <span className="font-script text-[20px] text-ink">made with care</span>
+    </p>
+    <div className="flex gap-4 text-stone">
+      <Tooltip text="Twitter">
+        <a href={X_URL} target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-accent">
+          <TwitterXIcon className="size-4" />
+        </a>
+      </Tooltip>
+      <Tooltip text="GitHub">
+        <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-accent">
+          <GithubIcon className="size-4" />
+        </a>
+      </Tooltip>
+      <Tooltip text="Gmail">
+        <a href={`mailto:${EMAIL}?subject=Contact from Portfolio`} aria-label="Email" className="hover:text-accent">
+          <GmailIcon className="size-4" />
+        </a>
+      </Tooltip>
     </div>
-  )
-}
+  </footer>
+);
 
-export default Footer
+export default Footer;

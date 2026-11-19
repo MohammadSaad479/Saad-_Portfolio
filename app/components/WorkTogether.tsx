@@ -1,143 +1,94 @@
 "use client";
 
-import React, { useState, useRef, FormEvent } from "react";
-import { ArrowUpRight, Mail, ArrowRight, CircleCheck } from "lucide-react";
+import { useRef, useState, FormEvent } from "react";
+import { ArrowRight, ArrowUpRight, CircleCheck, Mail } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
+import SectionHeader from "./SectionHeader";
+import { EMAIL, GMAIL_COMPOSE, X_URL } from "@/lib/data";
 
-const WorkTogether = () => {
-  const [success, setSuccess] = useState(false);
-  const [loading, setLoading] = useState(false);
+const channels = [
+  { href: GMAIL_COMPOSE, icon: <Mail className="size-4" />, title: EMAIL, note: "Quick queries & questions" },
+  { href: X_URL, icon: <FaXTwitter className="size-4" />, title: "Connect on X", note: "Follow for updates & insights" },
+];
 
+const WorkTogether = ({ title = "Let’s work together" }: { title?: string }) => {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
-
-    setLoading(true);
-
-    emailjs
-      .sendForm(
-        "service_fx1nqu9",
-        "template_z508ff4",
-        formRef.current,
-        "MDWb9Epf8P07AdUWQ"
-      )
-      .then(
-        () => {
-          setSuccess(true);
-          setLoading(false);
-          formRef.current?.reset();
-          setTimeout(() => setSuccess(false), 5000);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-        }
-      );
+    setStatus("loading");
+    emailjs.sendForm("service_fx1nqu9", "template_z508ff4", formRef.current, "MDWb9Epf8P07AdUWQ").then(
+      () => {
+        setStatus("success");
+        formRef.current?.reset();
+        setTimeout(() => setStatus("idle"), 5000);
+      },
+      (error) => {
+        console.error(error);
+        setStatus("error");
+      }
+    );
   };
 
   return (
-    <>
-      {success && (
-        <div className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] sm:w-auto flex justify-center">
-          <div className="flex items-center gap-2 
-            bg-green-100 border border-green-300 
-            text-green-800 text-xs sm:text-sm md:text-base 
-            px-3 sm:px-5 py-2 sm:py-3 
-            rounded-lg shadow-md">
-            <CircleCheck className="text-green-800 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-            <span>Message sent successfully</span>
+    <section id="contact" className="scroll-mt-8">
+      {status === "success" && (
+        <div className="fixed left-1/2 top-6 z-50 -translate-x-1/2">
+          <div className="chip px-4 py-2 text-sm">
+            <CircleCheck className="size-4 text-accent" /> Message sent successfully
           </div>
         </div>
       )}
 
-      <div id="contact" className="mb-15 mt-20">
-        <div className="px-3 md:px-0 lg:px-0">
-          <h2 className="text-white/90 text-sm">Let's Work Together</h2>
-          <p className="text-sm mt-2 text-gray-400/50">
-            From concept to creation — done right.
+      <SectionHeader eyebrow="Contact" title={title} description="From concept to creation — done right." />
+
+      <div className="grid gap-5 md:grid-cols-2">
+        <div className="card flex flex-col">
+          <h3 className="headline-sm">Get in touch</h3>
+          <p className="mt-2 text-sm leading-6 text-stone">
+            Reach out using your preferred method, and let’s talk about your project.
+          </p>
+          <div className="mt-5 flex flex-col gap-3">
+            {channels.map((c) => (
+              <a
+                key={c.title}
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 rounded-2xl bg-subtle px-4 py-3 transition-colors hover:bg-muted"
+              >
+                <span className="text-stone group-hover:text-accent">{c.icon}</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-sm font-medium text-ink">{c.title}</span>
+                  <span className="block text-xs text-stone">{c.note}</span>
+                </span>
+                <ArrowUpRight className="size-4 text-stone group-hover:text-accent" />
+              </a>
+            ))}
+          </div>
+          <p className="mt-auto pt-6 font-script text-[20px] leading-[22px] text-stone">
+            Replies within 24 hours · available for hire
           </p>
         </div>
 
-        <div className="md:flex md:justify-between mt-5 px-2 gap-5">
-          {/* LEFT CARD */}
-          <div className="px-3 md:px-0 lg:px-0">
-            <div className="w-90 h-110 bg-neutral-800/10 border border-white/10 rounded-lg">
-              <div className="mt-10 ml-7">
-                <h2 className="text-white text-lg tracking-tight">Get in Touch</h2>
-                <p className="text-sm mt-2 text-gray-400/50">
-                  Feel free to reach out using your preferred method, and let’s
-                  talk about your project...
-                </p>
-              </div>
-
-              <div className="mt-4 ml-7">
-                <div className="bg-neutral-700/20 w-75 h-15 rounded-sm border border-white/20 hover:opacity-80">
-                  <div className="flex justify-between px-3">
-                    <a className="flex gap-3"
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=saadqureshi479@gmail.com&su=Contact via email"
-                      target="_blank" rel="noopener noreferrer">
-                      <Mail className="text-white/50 mt-4.5 stroke-1 size-5" />
-                      <div>
-                        <h2 className="text-white/90 text-[13px] mt-3 tracking-tighter">
-                          saadqureshi479@gmail.com
-                        </h2>
-                        <p className="text-gray-400/50 text-[9px] tracking-tight">
-                          Quick queries & questions
-                        </p>
-                      </div>
-                    </a>
-                    <ArrowUpRight className="text-white/50 size-5 mt-4.5 stroke-1" />
-                  </div>
-                </div>
-
-                <div className="bg-neutral-700/20 w-75 h-15 rounded-sm border border-white/20 hover:opacity-80 mt-3">
-                  <div className="flex justify-between px-3">
-                    <a className="flex gap-3" href="https://x.com/MohammadSa3918" target="_blank" rel="noopener noreferrer">
-                      <FaXTwitter className="text-white/50 mt-4.5 size-5" />
-                      <div>
-                        <h2 className="text-white/90 text-[13px] mt-3 tracking-tighter">Connect on X</h2>
-                        <p className="text-gray-400/50 text-[9px] tracking-tight">Follow for updates & insights</p>
-                      </div>
-                    </a>
-                    <ArrowUpRight className="text-white/50 size-5 mt-4.5 stroke-1" />
-                  </div>
-                </div>
-
-                <div className="mt-10 text-[10px]">
-                  <h2 className="text-gray-400/50 hover:text-white/70 transition-all duration-300">
-                    Responses within 24 hours | Available for hire
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT CARD */}
-          <div className="px-3 md:px-0 lg:px-0">
-            <div className="w-90 h-110 mt-10 md:mt-0 bg-neutral-800/10 border border-white/10 rounded-lg">
-              <div className="mt-10 ml-7">
-                <h2 className="text-white text-lg tracking-tight">Send a Message</h2>
-                <p className="text-sm mt-2 text-gray-400/50">
-                  Prefer writing? Fill out the form,<br /> and I’ll respond within 24 hours.
-                </p>
-              </div>
-
-              <form ref={formRef} onSubmit={sendEmail} className="mt-4 ml-7 flex flex-col gap-4">
-                <input className="bg-neutral-700/20 w-75 h-12 px-4 rounded-sm border border-white/20 text-white/90 placeholder:text-sm focus:outline-none" type="text" placeholder="Full Name" name="fullName" required />
-                <input className="bg-neutral-700/20 w-75 h-12 px-4 rounded-sm border border-white/20 text-white/90 placeholder:text-sm focus:outline-none" type="email" placeholder="Email Address" name="email" required />
-                <textarea className="bg-neutral-700/20 w-75 h-20 px-4 py-3 rounded-sm border border-white/20 text-white/90 placeholder:text-sm focus:outline-none resize-none" placeholder="Your Message" name="message" required />
-                <button type="submit" disabled={loading} className="w-75 h-12 mt-1 flex items-center justify-center gap-2 rounded-sm border border-white/30 text-white/50 hover:bg-white/80 hover:text-black transition-all duration-300 disabled:opacity-50">
-                  {loading ? "Sending..." : "Send Message"} <ArrowRight className="stroke-1" />
-                </button>
-              </form>
-            </div>
-          </div>
+        <div className="card">
+          <h3 className="headline-sm">Send a message</h3>
+          <p className="mt-2 text-sm leading-6 text-stone">Prefer writing? Fill out the form and I’ll respond within 24 hours.</p>
+          <form ref={formRef} onSubmit={sendEmail} className="mt-5 flex flex-col gap-3">
+            <input className="input" type="text" placeholder="Full name" name="fullName" aria-label="Full name" required />
+            <input className="input" type="email" placeholder="Email address" name="email" aria-label="Email address" required />
+            <textarea className="input h-28 resize-none rounded-2xl" placeholder="Your message" name="message" aria-label="Your message" required />
+            {status === "error" && <p className="text-sm text-error">Something went wrong — please try again or email me directly.</p>}
+            <button type="submit" disabled={status === "loading"} className="btn-primary self-start">
+              {status === "loading" ? "Sending…" : "Send message"} <ArrowRight className="size-4" />
+            </button>
+          </form>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
