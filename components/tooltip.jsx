@@ -19,10 +19,10 @@ export const Tooltip = ({ children, text, position = "top", className = "" }) =>
   };
 
   const arrowPositions = {
-    top: "absolute top-full left-1/2 -translate-x-1/2 -mt-px border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-zinc-800",
-    bottom: "absolute bottom-full left-1/2 -translate-x-1/2 -mb-px border-l-[6px] border-r-[6px] border-b-[6px] border-l-transparent border-r-transparent border-b-zinc-800",
-    left: "absolute left-full top-1/2 -translate-y-1/2 -ml-px border-t-[6px] border-b-[6px] border-l-[6px] border-t-transparent border-b-transparent border-l-zinc-800",
-    right: "absolute right-full top-1/2 -translate-y-1/2 -mr-px border-t-[6px] border-b-[6px] border-r-[6px] border-t-transparent border-b-transparent border-r-zinc-800"
+    top: "absolute top-full left-1/2 -translate-x-1/2 -mt-px border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-ink",
+    bottom: "absolute bottom-full left-1/2 -translate-x-1/2 -mb-px border-l-[6px] border-r-[6px] border-b-[6px] border-l-transparent border-r-transparent border-b-ink",
+    left: "absolute left-full top-1/2 -translate-y-1/2 -ml-px border-t-[6px] border-b-[6px] border-l-[6px] border-t-transparent border-b-transparent border-l-ink",
+    right: "absolute right-full top-1/2 -translate-y-1/2 -mr-px border-t-[6px] border-b-[6px] border-r-[6px] border-t-transparent border-b-transparent border-r-ink"
   };
 
   return (
@@ -34,13 +34,13 @@ export const Tooltip = ({ children, text, position = "top", className = "" }) =>
       {children}
       
       <div
-        className={`absolute ${positions[position]} px-3 py-1.5 bg-zinc-800 text-white text-xs font-medium rounded-lg whitespace-nowrap pointer-events-none transition-all duration-100 ease-out z-50 ${
+        className={`absolute ${positions[position]} px-3 py-1.5 bg-ink text-white text-xs font-medium rounded-lg whitespace-nowrap pointer-events-none transition-all duration-100 ease-out z-50 ${
           isVisible 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-1'
         }`}
         style={{
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2)'
+          boxShadow: '0 4px 6px -1px rgba(37, 37, 37, 0.12)'
         }}
       >
         {text}
