@@ -9,11 +9,18 @@ const ProjectCard = ({ project }: { project: Project }) => (
     className="card group flex flex-col gap-4"
   >
     <div className="overflow-hidden rounded-lg border border-line/70 bg-muted">
-      <img
-        src={project.image}
-        alt={`${project.title} preview`}
-        className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-      />
+      {project.image ? (
+        <img
+          src={project.image}
+          alt={`${project.title} preview`}
+          className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        />
+      ) : (
+        <div className="flex aspect-[16/10] w-full flex-col items-center justify-center gap-1 transition-transform duration-500 group-hover:scale-[1.03]">
+          <span className="headline-sm text-ink">{project.title}</span>
+          <span className="text-xs text-stone">{project.url.replace(/^https?:\/\//, "")}</span>
+        </div>
+      )}
     </div>
     <div className="flex items-start justify-between gap-3">
       <h3 className="headline-sm text-ink">{project.title}</h3>
